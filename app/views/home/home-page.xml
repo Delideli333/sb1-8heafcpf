@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Social Media Manager" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Button text="Upload Photo" tap="{{ onUploadPhotoTap }}" class="btn btn-primary m-b-10" />
+            <Button text="Take Photo" tap="{{ onTakePhotoTap }}" class="btn btn-secondary m-b-10" />
+            
+            <Label text="Original Image:" class="h3" visibility="{{ selectedImage ? 'visible' : 'collapsed' }}" />
+            <Image src="{{ selectedImage }}" height="200" visibility="{{ selectedImage ? 'visible' : 'collapsed' }}" 
+                   stretch="aspectFit" class="m-y-10" />
+            
+            <Label text="Generated Image:" class="h3" visibility="{{ generatedImage ? 'visible' : 'collapsed' }}" />
+            <Image src="{{ generatedImage }}" height="200" visibility="{{ generatedImage ? 'visible' : 'collapsed' }}" 
+                   stretch="aspectFit" class="m-y-10" />
+            
+            <TextView hint="Enter your content prompt..." text="{{ contentPrompt }}" 
+                      height="100" class="input m-b-10" />
+            
+            <GridLayout rows="auto" columns="*, *" class="m-b-10">
+                <Label text="Social Networks" colSpan="2" class="h3 m-b-5" />
+                <StackLayout row="1" col="0">
+                    <CheckBox text="Instagram" checked="{{ instagram }}" />
+                    <CheckBox text="Facebook" checked="{{ facebook }}" />
+                    <CheckBox text="Twitter" checked="{{ twitter }}" />
+                </StackLayout>
+                <StackLayout row="1" col="1">
+                    <CheckBox text="LinkedIn" checked="{{ linkedin }}" />
+                    <CheckBox text="TikTok" checked="{{ tiktok }}" />
+                </StackLayout>
+            </GridLayout>
+            
+            <Button text="Generate Content" tap="{{ onGenerateContent }}" 
+                    isEnabled="{{ canGenerate }}" class="btn btn-primary m-t-10" />
+        </StackLayout>
+    </ScrollView>
+</Page>

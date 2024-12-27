@@ -1,0 +1,34 @@
+{
+  "name": "social-media-manager",
+  "version": "1.0.0",
+  "description": "Social media content management and automation platform",
+  "main": "app/app.ts",
+  "scripts": {
+    "postinstall": "patch-package",
+    "android": "ns run android",
+    "ios": "ns run ios",
+    "preview": "ns preview"
+  },
+  "dependencies": {
+    "@nativescript/core": "~8.6.0",
+    "@nativescript/theme": "~3.0.2",
+    "@nativescript/camera": "^5.0.12",
+    "@nativescript/imagepicker": "^2.0.3",
+    "@nativescript/social-share": "^2.1.0",
+    "@nativescript/secure-storage": "^3.0.1",
+    "openai": "^4.20.1"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.6.2",
+    "@nativescript/ios": "8.6.1",
+    "@nativescript/types": "~8.6.0",
+    "@nativescript/webpack": "~5.0.18",
+    "typescript": "~5.2.2",
+    "@nativescript/cli": "^8.6.0",
+    "patch-package": "^6.4.7"
+  },
+  "nativescript": {
+    "id": "org.nativescript.socialmediamanager",
+    "templateVersion": "v8"
+  }
+}
